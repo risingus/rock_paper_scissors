@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'Barlow', sans-serif;
+  src: url(../public/fonts/BarlowSemiCondensed-SemiBold.ttf) format('truetype');
+  font-weight: 'semibold';
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Barlow', sans-serif;
+  src: url(../public/fonts/BarlowSemiCondensed-Bold.ttf) format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+  padding: 0;
+}
