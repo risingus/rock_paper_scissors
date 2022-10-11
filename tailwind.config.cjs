@@ -63,6 +63,132 @@ module.exports = {
         optionButtonInnerShadow: 'inset 0px 6px hsl(217, 16%, 85%)',
       },
 
+      keyframes: {
+
+        scaleOption: {
+          'from': {
+            transform: 'scale(0)'
+          },
+
+          'to': {
+            transform: 'scale(1)'
+          }
+        },
+
+        pulseWinner: {
+
+          '0%': {
+            boxShadow: `
+              0px 0px 1px 0px rgba(238, 238, 238, .05)
+            `
+          },
+
+
+          '20%': {
+            boxShadow: `
+              0px 0px 1px 22px rgba(238, 238, 238, .05),
+              0px 0px 1px 0px rgba(238, 238, 238, .05)
+            `
+          },
+
+
+          '40%': {
+            boxShadow: `
+            0px 0px 1px 48px rgba(238, 238, 238, .05),
+            0px 0px 1px 22px rgba(238, 238, 238, .05),
+            0px 0px 1px 0px rgba(238, 238, 238, .05)
+            `
+          },
+
+
+          '60%': {
+            boxShadow: `
+              0px 0px 1px 78px rgba(238, 238, 238, .05),
+              0px 0px 1px 48px rgba(238, 238, 238, .05),
+              0px 0px 1px 22px rgba(238, 238, 238, .05),
+              0px 0px 1px 0px rgba(238, 238, 238, .05)
+            `
+          },
+
+          '80%': {
+            boxShadow: `
+              0px 0px 1px 98px rgba(238, 238, 238, .05),
+              0px 0px 1px 68px rgba(238, 238, 238, .05),
+              0px 0px 1px 42px rgba(238, 238, 238, .05),
+              0px 0px 1px 0px rgba(238, 238, 238, .05)
+            `
+          },
+
+          '100%': {
+            boxShadow: `
+            0px 0px 1px 78px rgba(238, 238, 238, .05),
+            0px 0px 1px 48px rgba(238, 238, 238, .05),
+            0px 0px 1px 22px rgba(238, 238, 238, .05)
+            `
+          },
+        },
+
+        pulseWinnerLarge: {
+
+          '0%': {
+            boxShadow: `
+              0px 0px 1px 0px rgba(238, 238, 238, .05)
+            `
+          },
+
+
+          '20%': {
+            boxShadow: `
+              0px 0px 1px 42px rgba(238, 238, 238, .05),
+              0px 0px 1px 0px rgba(238, 238, 238, .05)
+            `
+          },
+
+
+          '40%': {
+            boxShadow: `
+            0px 0px 1px 88px rgba(238, 238, 238, .05),
+            0px 0px 1px 42px rgba(238, 238, 238, .05),
+            0px 0px 1px 0px rgba(238, 238, 238, .05)
+            `
+          },
+
+
+          '60%': {
+            boxShadow: `
+              0px 0px 1px 128px rgba(238, 238, 238, .05),
+              0px 0px 1px 88px rgba(238, 238, 238, .05),
+              0px 0px 1px 42px rgba(238, 238, 238, .05),
+              0px 0px 1px 0px rgba(238, 238, 238, .05)
+            `
+          },
+
+          '80%': {
+            boxShadow: `
+              0px 0px 1px 148px rgba(238, 238, 238, .05),
+              0px 0px 1px 108px rgba(238, 238, 238, .05),
+              0px 0px 1px 62px rgba(238, 238, 238, .05),
+              0px 0px 1px 0px rgba(238, 238, 238, .05)
+            `
+          },
+
+
+          '100%': {
+            boxShadow: `
+            0px 0px 1px 128px rgba(238, 238, 238, .05),
+            0px 0px 1px 88px rgba(238, 238, 238, .05),
+            0px 0px 1px 42px rgba(238, 238, 238, .05)
+            `
+          },
+        },
+      },
+
+      animation: {
+        pulse: 'pulseWinner 0.5s cubic-bezier(1,1.05,1,1) forwards',
+        pulseLarge: 'pulseWinnerLarge 0.5s cubic-bezier(1,1.05,1,1) forwards',
+        scale: 'scaleOption 0.4s cubic-bezier(1,1.05,1,1) forwards'
+      },
+
       screens: {
         xs: '374px',
       }

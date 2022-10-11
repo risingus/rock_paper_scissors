@@ -3,9 +3,10 @@ import { RulesModal } from '../RulesModal';
 
 interface RulesButtonProps {
 	isAdvanced: boolean;
+	changeDifficult: () => void;
 }
 
-export function RulesButton({ isAdvanced }: RulesButtonProps) {
+export function RulesButton({ isAdvanced, changeDifficult }: RulesButtonProps) {
 	const [isModalRulesOpen, setIsModalRulesOpen] = useState(false);
 
 	function showRules() {
@@ -40,7 +41,12 @@ export function RulesButton({ isAdvanced }: RulesButtonProps) {
 				RULES
 			</button>
 
-			<RulesModal isAdvanced={isAdvanced} isOpen={isModalRulesOpen} closeModal={closeRules} />
+			<RulesModal
+				isAdvanced={isAdvanced}
+				isOpen={isModalRulesOpen}
+				closeModal={closeRules}
+				changeDifficult={changeDifficult}
+			/>
 		</>
 	);
 }

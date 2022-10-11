@@ -3,9 +3,10 @@ import logoAdvanced from '../../assets/logo-bonus.svg';
 
 interface ScoreBoardProps {
 	isAdvanced: boolean;
+	score: number;
 }
 
-export function ScoreBoard({ isAdvanced }: ScoreBoardProps) {
+export function ScoreBoard({ isAdvanced, score }: ScoreBoardProps) {
 	return (
 		<div
 			className="
@@ -13,6 +14,8 @@ export function ScoreBoard({ isAdvanced }: ScoreBoardProps) {
         pr-5
         pl-5
         pt-7
+        xl:w-4/5
+        xl:w-2/5
       ">
 			<div
 				className="
@@ -39,7 +42,8 @@ export function ScoreBoard({ isAdvanced }: ScoreBoardProps) {
 					<img
 						className={`
             object-contain
-            ${isAdvanced ? 'w-14' : 'w-20'}
+            sm:${isAdvanced ? 'w-14' : 'w-20'}
+            xl:${isAdvanced ? 'w-32' : 'w-44'}
             `}
 						src={isAdvanced ? logoAdvanced : logoEasy}
 						alt="gameLogo"
@@ -53,9 +57,14 @@ export function ScoreBoard({ isAdvanced }: ScoreBoardProps) {
           flex
           flex-col
           pt-2
+          pb-2
           pr-5
           pl-5
           text-center
+          xl:pr-12
+          xl:pl-12
+          xl:pt-4
+          xl:pb-4
         ">
 					<span
 						className="
@@ -64,6 +73,7 @@ export function ScoreBoard({ isAdvanced }: ScoreBoardProps) {
             font-barlow
             text-xs
             tracking-widest
+            xl:text-lg
           ">
 						SCORE
 					</span>
@@ -75,8 +85,10 @@ export function ScoreBoard({ isAdvanced }: ScoreBoardProps) {
           font-barlow
           text-4.5xl
           -mt-3
+          xl:text-6xl
+
         ">
-						12
+						{score}
 					</span>
 				</div>
 			</div>

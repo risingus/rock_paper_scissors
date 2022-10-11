@@ -1,14 +1,15 @@
 import rulesBasic from '../../assets/image-rules.svg';
 import rulesAdvanced from '../../assets/image-rules-bonus.svg';
-import iconClose from '../../assets/icon-close.svg';
+import { IoIosClose } from 'react-icons/io';
 
 interface RulesModalProps {
 	isAdvanced: boolean;
 	isOpen: boolean;
 	closeModal: () => void;
+	changeDifficult: () => void;
 }
 
-export function RulesModal({ isAdvanced, isOpen, closeModal }: RulesModalProps) {
+export function RulesModal({ isAdvanced, isOpen, closeModal, changeDifficult }: RulesModalProps) {
 	if (!isOpen) return null;
 
 	return (
@@ -102,9 +103,44 @@ export function RulesModal({ isAdvanced, isOpen, closeModal }: RulesModalProps) 
 					className="
             mt-auto
             mb-24
+						flex
+						flex-col
+						gap-4
+						align-middle
+						justify-center
           ">
-					<button onClick={closeModal}>
-						<img src={iconClose} alt="Basic Rules" />
+					<button
+						onClick={changeDifficult}
+						className="
+							text-text
+							text-3xl
+							font-barlow
+							font-bold
+							hover:bg-headerOutline duration-300
+							hover:text-white
+							rounded-md
+							p-2
+						">
+						{isAdvanced ? 'EASY MODE' : 'HARDER!'}
+					</button>
+
+					<button
+						onClick={closeModal}
+						className="
+						flex
+						align-middle
+						justify-center
+					">
+						<IoIosClose
+							className="
+							text-headerOutline
+							text-6xl
+							p-1
+							hover:bg-headerOutline duration-300
+							hover:text-white
+							rounded-full
+							"
+						/>
 					</button>
 				</div>
 			</div>
