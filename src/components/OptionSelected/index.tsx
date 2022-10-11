@@ -20,13 +20,13 @@ export function OptionSelected({ optionSelected, title, isWinner }: OptionSelect
 				<div
 					className="
       rounded-full
-      w-28
-      h-28
+      w-32
+      h-32
       bg-background-gradient1
-			animate-bounce
+			animate-rapidBounce
 			xl:order-2
-			xl:w-48
-			xl:h-48
+			xl:w-52
+			xl:h-52
 			xl:z-10
       "
 				/>

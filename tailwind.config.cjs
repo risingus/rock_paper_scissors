@@ -181,12 +181,29 @@ module.exports = {
             `
           },
         },
+
+
+        customBounce: {
+
+          '0%': {
+            transform: 'translateY(-25%)'
+          },
+
+          '50%': {
+            transform: 'translateY(0)'
+          },
+
+          '100%': {
+            transform: 'translateY(-25%)'
+          },
+        },
       },
 
       animation: {
         pulse: 'pulseWinner 0.5s cubic-bezier(1,1.05,1,1) forwards',
         pulseLarge: 'pulseWinnerLarge 0.5s cubic-bezier(1,1.05,1,1) forwards',
-        scale: 'scaleOption 0.4s cubic-bezier(1,1.05,1,1) forwards'
+        scale: 'scaleOption 0.2s linear forwards',
+        rapidBounce: 'customBounce .35s linear infinite'
       },
 
       screens: {
