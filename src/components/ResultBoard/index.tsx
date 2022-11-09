@@ -2,10 +2,10 @@ import { useMemo } from 'react';
 import { OptionSelected } from '../OptionSelected';
 
 interface ResultBoardProps {
-	userSelection: 'rock' | 'paper' | 'scissors' | 'spock' | 'lizard' | null;
-	houseSelection: 'rock' | 'paper' | 'scissors' | 'spock' | 'lizard' | null;
+	userSelection: TypeSelection;
+	houseSelection: TypeSelection;
 	playAgain: () => void;
-	returnResult: (user: any, house: any) => 'YOU WIN' | 'YOU LOSE' | 'DRAW';
+	returnResult: (user: TypeSelection, house: TypeSelection) => 'YOU WIN' | 'YOU LOSE' | 'DRAW';
 }
 
 export function ResultBoard({

@@ -5,7 +5,7 @@ import { GameBoard } from './components/GameBoard';
 import { RulesButton } from './components/RulesButton';
 import { ResultBoard } from './components/ResultBoard';
 
-function returnResult(user: any, house: any) {
+function returnResult(user: TypeSelection, house: TypeSelection) {
 	if (user === house) return 'DRAW';
 	if (user === 'scissors' && house === 'paper') return 'YOU WIN';
 	if (user === 'paper' && house === 'scissors') return 'YOU LOSE';
@@ -45,8 +45,8 @@ const advancedOptions = ['rock', 'paper', 'scissors', 'spock', 'lizard'];
 
 function App() {
 	const [isAdvanced, setIsAdvanced] = useState(false);
-	const [userSelection, setUserSelection] = useState(null);
-	const [houseSelection, setHouseSelection] = useState(null);
+	const [userSelection, setUserSelection] = useState<TypeSelection>(null);
+	const [houseSelection, setHouseSelection] = useState<TypeSelection>(null);
 	const [score, setScore] = useState(0);
 
 	function changeDifficult() {
@@ -56,7 +56,7 @@ function App() {
 		setUserSelection(null);
 	}
 
-	function calculateScore(userOption: any, houseOption: any) {
+	function calculateScore(userOption: TypeSelection, houseOption: TypeSelection) {
 		try {
 			setScore((prevState) => {
 				const winner = returnResult(userOption, houseOption);
@@ -69,7 +69,7 @@ function App() {
 		}
 	}
 
-	function chooseOption(option: any) {
+	function chooseOption(option: TypeSelection) {
 		try {
 			setUserSelection(option);
 
@@ -77,9 +77,8 @@ function App() {
 				const optionsToChoose = isAdvanced ? advancedOptions : options;
 				const newHouseSelection = Math.floor(Math.random() * optionsToChoose.length);
 
-				setHouseSelection(optionsToChoose[newHouseSelection] as any);
-
-				calculateScore(option, optionsToChoose[newHouseSelection]);
+				setHouseSelection(optionsToChoose[newHouseSelection] as TypeSelection);
+				calculateScore(option, optionsToChoose[newHouseSelection] as TypeSelection);
 			}, 1000);
 		} catch (error) {
 			console.log(error);

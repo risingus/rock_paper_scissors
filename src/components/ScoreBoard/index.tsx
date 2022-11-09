@@ -14,8 +14,7 @@ export function ScoreBoard({ isAdvanced, score }: ScoreBoardProps) {
         pr-5
         pl-5
         pt-7
-        xl:w-4/5
-        xl:w-2/5
+        xl:w-4/6
       ">
 			<div
 				className="

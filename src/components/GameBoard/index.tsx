@@ -4,7 +4,7 @@ import pentagonBackground from '../../assets/bg-pentagon.svg';
 
 interface GameBoardProps {
 	isAdvanced: boolean;
-	chooseOption: (option: any) => void;
+	chooseOption: (option: TypeSelection) => void;
 }
 
 export function GameBoard({ isAdvanced, chooseOption }: GameBoardProps) {
@@ -27,7 +27,7 @@ export function GameBoard({ isAdvanced, chooseOption }: GameBoardProps) {
 					-mt-10
 					xl:-mt-28
 				">
-					<OptionButton type="scissors" onClick={chooseOption} />
+					<OptionButton type="scissors" onClick={() => chooseOption('scissors')} />
 				</div>
 
 				<div
@@ -40,7 +40,7 @@ export function GameBoard({ isAdvanced, chooseOption }: GameBoardProps) {
 					xl:mt-5
 					xl:-ml-96
 				">
-					<OptionButton type="spock" onClick={chooseOption} />
+					<OptionButton type="spock" onClick={() => chooseOption('spock')} />
 				</div>
 
 				<div
@@ -53,7 +53,7 @@ export function GameBoard({ isAdvanced, chooseOption }: GameBoardProps) {
 					xl:mt-5
 					xl:ml-96
 				">
-					<OptionButton type="paper" onClick={chooseOption} />
+					<OptionButton type="paper" onClick={() => chooseOption('paper')} />
 				</div>
 
 				<div
@@ -66,7 +66,7 @@ export function GameBoard({ isAdvanced, chooseOption }: GameBoardProps) {
 					xl:mt-52
 					xl:-ml-56
 				">
-					<OptionButton type="lizard" onClick={chooseOption} />
+					<OptionButton type="lizard" onClick={() => chooseOption('lizard')} />
 				</div>
 
 				<div
@@ -79,7 +79,7 @@ export function GameBoard({ isAdvanced, chooseOption }: GameBoardProps) {
 					xl:mt-52
 					xl:ml-56
 				">
-					<OptionButton type="rock" onClick={chooseOption} />
+					<OptionButton type="rock" onClick={() => chooseOption('rock')} />
 				</div>
 
 				<img
@@ -115,7 +115,7 @@ export function GameBoard({ isAdvanced, chooseOption }: GameBoardProps) {
 					xl:-mt-20
 					xl:-ml-72
 				">
-				<OptionButton type="paper" onClick={chooseOption} />
+				<OptionButton type="paper" onClick={() => chooseOption('paper')} />
 			</div>
 
 			<div
@@ -127,7 +127,7 @@ export function GameBoard({ isAdvanced, chooseOption }: GameBoardProps) {
 					xl:-mt-20
 					xl:-mr-72
 				">
-				<OptionButton type="scissors" onClick={chooseOption} />
+				<OptionButton type="scissors" onClick={() => chooseOption('scissors')} />
 			</div>
 
 			<div
@@ -137,7 +137,7 @@ export function GameBoard({ isAdvanced, chooseOption }: GameBoardProps) {
 					mt-24
 					xl:mt-40
 				">
-				<OptionButton type="rock" onClick={chooseOption} />
+				<OptionButton type="rock" onClick={() => chooseOption('rock')} />
 			</div>
 
 			<img

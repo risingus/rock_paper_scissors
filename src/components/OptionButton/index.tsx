@@ -4,11 +4,11 @@ import scissors from '../../assets/icon-scissors.svg';
 import spock from '../../assets/icon-spock.svg';
 import lizard from '../../assets/icon-lizard.svg';
 interface OptionButtonProps {
-	type: 'rock' | 'paper' | 'scissors' | 'spock' | 'lizard' | null;
-	onClick: (type: string) => void;
+	type: TypeSelection;
+	onClick?: () => void;
 }
 
-const buttonColor = (type: any) => {
+const buttonColor = (type: TypeSelection) => {
 	if (type === 'rock') return 'bg-gradient-radial from-pedra-gradient1 to-pedra-gradient2';
 	if (type === 'paper') return 'bg-gradient-radial from-papel-gradient1 to-papel-gradient2';
 	if (type === 'scissors') return 'bg-gradient-radial from-tesoura-gradient1 to-tesoura-gradient2';
@@ -16,7 +16,7 @@ const buttonColor = (type: any) => {
 	return 'bg-gradient-radial from-lagarto-gradient1 to-lagarto-gradient2';
 };
 
-const buttonShadowColor = (type: any) => {
+const buttonShadowColor = (type: TypeSelection) => {
 	if (type === 'paper') return 'shadow-papelButton';
 	if (type === 'scissors') return 'shadow-tesouraButton';
 	if (type === 'rock') return 'shadow-pedraButton';
@@ -24,7 +24,7 @@ const buttonShadowColor = (type: any) => {
 	return 'shadow-lagartoButton';
 };
 
-const buttonImg = (type: any) => {
+const buttonImg = (type: TypeSelection) => {
 	if (type === 'rock') return rock;
 	if (type === 'paper') return paper;
 	if (type === 'scissors') return scissors;
@@ -32,10 +32,10 @@ const buttonImg = (type: any) => {
 	return lizard;
 };
 
-export function OptionButton({ type, onClick }: OptionButtonProps) {
+export function OptionButton({ type, ...rest }: OptionButtonProps) {
 	return (
 		<button
-			onClick={() => onClick(type as string)}
+			{...rest}
 			className={`
 				${buttonColor(type)} 
 				rounded-full 

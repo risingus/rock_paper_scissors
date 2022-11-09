@@ -1,7 +1,7 @@
 import { OptionButton } from '../OptionButton';
 
 interface OptionSelectedProps {
-	optionSelected: 'rock' | 'paper' | 'scissors' | 'spock' | 'lizard' | null;
+	optionSelected: TypeSelection;
 	title: 'YOU PICKED' | 'THE HOUSE PICKED';
 	isWinner: boolean;
 }

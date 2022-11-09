@@ -9,10 +9,6 @@ interface RulesButtonProps {
 export function RulesButton({ isAdvanced, changeDifficult }: RulesButtonProps) {
 	const [isModalRulesOpen, setIsModalRulesOpen] = useState(false);
 
-	function showRules() {
-		setIsModalRulesOpen(true);
-	}
-
 	function closeRules() {
 		setIsModalRulesOpen(false);
 	}
